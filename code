@@ -1,442 +1,573 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grāmatu Pasaule</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grāmatu Pasaule</title>
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        body{
-            background: #f2f2f2;
-            color: #222;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        .container{
-            width: 1100px;
-            margin: auto;
-            background: white;
-        }
+body{
+    background:#f2f2f2;
+    color:#222;
+}
 
-        /* HEADER */
+.container{
+    width:1100px;
+    margin:auto;
+    background:white;
+}
 
-        header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            border-bottom: 1px solid #ccc;
-        }
+/* HEADER */
 
-        .logo{
-            font-size: 28px;
-            font-weight: bold;
-            color: #5a3e2b;
-        }
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    border-bottom:1px solid #ccc;
+}
 
-        nav a{
-            margin-left: 25px;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#5a3e2b;
+}
 
-        nav a:hover{
-            color: #8b5e3c;
-        }
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
 
-        /* GALVENAIS BLOKS */
+nav a:hover{
+    color:#8b5e3c;
+}
 
-        .hero{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 40px;
-            background: #faf7f2;
-        }
+/* HERO */
 
-        .hero-text{
-            width: 50%;
-        }
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px 40px;
+    background:#faf7f2;
+}
 
-        .hero-text h1{
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+.hero-text{
+    width:50%;
+}
 
-        .hero-text p{
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
+.hero-text h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
 
-        .buttons button{
-            padding: 12px 25px;
-            border: none;
-            cursor: pointer;
-            margin-right: 15px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+.hero-text p{
+    margin-bottom:25px;
+    line-height:1.6;
+}
 
-        .btn1{
-            background: #d6b98c;
-        }
+.buttons button{
+    padding:12px 25px;
+    border:none;
+    cursor:pointer;
+    margin-right:15px;
+    border-radius:5px;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-        .btn2{
-            background: #b8c7e0;
-        }
+.buttons button:hover{
+    transform:scale(1.05);
+}
 
-        .hero-image{
-            width: 40%;
-            height: 250px;
-            background: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #666;
-            font-size: 24px;
-        }
+.btn1{
+    background:#d6b98c;
+}
 
-        /* GRĀMATAS */
+.btn2{
+    background:#b8c7e0;
+}
 
-        .books{
-            padding: 50px 40px;
-            display: flex;
-            gap: 20px;
-        }
+.hero-image img{
+    width:400px;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
 
-        .card{
-            flex: 1;
-        }
+/* BOOKS */
 
-        .card-image{
-            height: 180px;
-            background: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.books{
+    padding:50px 40px;
+    display:flex;
+    gap:20px;
+}
 
-        .card h3{
-            margin-bottom: 10px;
-        }
+.card{
+    flex:1;
+    transition:0.3s;
+}
 
-        .card a{
-            color: #5a3e2b;
-            font-weight: bold;
-        }
+.card:hover{
+    transform:translateY(-10px);
+}
 
-        /* REKLĀMA */
+.card-image img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
 
-        .ad{
-            background: #dce8d6;
-            text-align: center;
-            padding: 70px 20px;
-        }
+.card h3{
+    margin-bottom:10px;
+}
 
-        .ad h2{
-            font-size: 40px;
-            margin-bottom: 30px;
-        }
+.card a{
+    color:#5a3e2b;
+    font-weight:bold;
+}
 
-        .ad-buttons button{
-            padding: 14px 35px;
-            border: none;
-            margin: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
+/* AD */
 
-        .buy{
-            background: #e6d8aa;
-        }
+.ad{
+    background:#dce8d6;
+    text-align:center;
+    padding:70px 20px;
+}
 
-        .try{
-            background: #e8b9b9;
-        }
+.ad h2{
+    font-size:40px;
+    margin-bottom:30px;
+}
 
-        /* SLAIDERIS */
+.ad-buttons button{
+    padding:14px 35px;
+    border:none;
+    margin:10px;
+    cursor:pointer;
+    font-size:16px;
+    border-radius:5px;
+    transition:0.3s;
+}
 
-        .slider{
-            height: 400px;
-            margin: 50px 40px;
-            background: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            font-size: 28px;
-            color: #666;
-        }
+.ad-buttons button:hover{
+    opacity:0.8;
+}
 
-        .arrow{
-            position: absolute;
-            font-size: 40px;
-            cursor: pointer;
-        }
+.buy{
+    background:#e6d8aa;
+}
 
-        .left{
-            left: 20px;
-        }
+.try{
+    background:#e8b9b9;
+}
 
-        .right{
-            right: 20px;
-        }
+/* SLIDER */
 
-        /* INFORMĀCIJA */
+.slider{
+    position:relative;
+    margin:50px 40px;
+}
 
-        .info{
-            padding: 50px 40px;
-        }
+.slider img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:10px;
+}
 
-        .info h2{
-            font-size: 38px;
-            margin-bottom: 20px;
-        }
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:50px;
+    color:white;
+    cursor:pointer;
+    background:rgba(0,0,0,0.4);
+    padding:10px;
+}
 
-        .info p{
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }.info ul{
-            margin-left: 20px;
-            margin-bottom: 30px;
-        }
+.left{
+    left:10px;
+}
 
-        table{
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-        }
+.right{
+    right:10px;
+}
 
-        td{
-            border: 1px solid #ccc;
-            padding: 20px;
-        }
+/* INFO */
 
-        /* FOOTER */
+.info{
+    padding:50px 40px;
+}
 
-        footer{
-            background: #efe3c4;
-            padding: 40px;
-        }
+.info h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
 
-        .footer-content{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.info p{
+    margin-bottom:20px;
+    line-height:1.6;
+}
 
-        .footer-links a{
-            display: block;
-            color: black;
-            margin-bottom: 10px;
-        }
+.info ul{
+    margin-left:20px;
+    margin-bottom:30px;
+}
 
-        .author{
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 20px;
-            border-top: 1px solid #ccc;
-        }
+table{
+    width:100%;
+    border-collapse:collapse;
+    text-align:center;
+}
 
-    </style>
+td{
+    border:1px solid #ccc;
+    padding:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#efe3c4;
+    padding:40px;
+}
+
+.footer-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-links a{
+    display:block;
+    color:black;
+    margin-bottom:10px;
+}
+
+.author{
+    text-align:center;
+    padding-top:20px;
+    margin-top:20px;
+    border-top:1px solid #ccc;
+}
+
+#datums{
+    text-align:center;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="container">
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">Grāmatu Pasaule</div>
+<!-- HEADER -->
 
-        <nav>
-            <a href="#">Sākums</a>
-            <a href="#">Grāmatas</a>
-            <a href="#">Par mums</a>
-            <a href="#">Kontakti</a>
-        </nav>
-    </header>
+<header>
 
-    <!-- GALVENAIS BLOKS -->
-    <section class="hero">
+<div class="logo">Grāmatu Pasaule</div>
 
-        <div class="hero-text">
-            <h1>Atklāj jaunas grāmatas</h1>
+<nav>
+<a href="#">Sākums</a>
+<a href="#">Grāmatas</a>
+<a href="#">Par mums</a>
+<a href="#">Kontakti</a>
+</nav>
 
-            <p>
-                Lasīšana paplašina redzesloku un palīdz attīstīt iztēli.
-                Mūsu bibliotēkā atradīsi aizraujošus romānus,
-                detektīvus un klasisko literatūru.
-            </p>
+</header>
 
-            <div class="buttons">
-                <button class="btn1">Lasīt vairāk</button>
-                <button class="btn2">Pieteikties</button>
-            </div>
-        </div>
+<!-- HERO -->
 
-        <div class="hero-image">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.sfdpJLpPUBkFfUJ9i6XEYQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
-           
-        </div>
+<section class="hero">
 
-    </section>
+<div class="hero-text">
 
-    <!-- GRĀMATAS -->
-    <section class="books">
+<h1>Atklāj jaunas grāmatas</h1>
 
-        <div class="card">
-            <div class="card-image">
-           
-            <img src="https://img.ws.mms.shopee.vn/c81a8ff8d4b10282a3bca1e1bc8e4e75">
-           
-         </div>
-         
+<p>
+Lasīšana paplašina redzesloku un palīdz attīstīt iztēli.
+Mūsu bibliotēkā atradīsi aizraujošus romānus,
+detektīvus un klasisko literatūru.
+</p>
 
-            <h3>Populārākie romāni</h3>
-            <p>
-                Atklāj pasaulē slavenākos romānus un autorus.
-            </p>
+<div class="buttons">
 
-            <br>
+<button class="btn1" onclick="sveiciens()">
+Lasīt vairāk
+</button>
 
-            <a href="#">Lasīt vairāk</a>
-        </div>
+<button class="btn2" onclick="mainitFondu()">
+Mainīt fonu
+</button>
 
-        <div class="card">
-            <div class="card-image">
-            <img src="https://i.pinimg.com/200x150/fd/08/f2/fd08f2dd9704ee9f28fbd0b54c822b6b.jpg"></div>
+</div></div>
 
-            <h3>Detektīvu kolekcija</h3>
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-            <p>
-                Aizraujoši stāsti un negaidīti sižeta pavērsieni.
-            </p>
+</section>
 
-            <br>
+<!-- BOOKS -->
 
-            <a href="#">Lasīt vairāk</a>
-        </div>
+<section class="books">
 
-        <div class="card">
-            <div class="card-image">
-             <img src="https://i.pinimg.com/custom_covers/200x150/684476912056382965_1666295228.jpg"></div>
+<div class="card">
 
-            <h3>Klasiskā literatūra</h3>
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-            <p>
-                Iepazīsties ar pasaules literatūras klasiku.
-            </p>
+<h3>Populārākie romāni</h3>
 
-            <br>
+<p>
+Atklāj pasaulē slavenākos romānus un autorus.
+</p>
 
-            <a href="#">Lasīt vairāk</a>
-        </div>
+<br>
 
-    </section>
-
-    <!-- REKLĀMA -->
-    <section class="ad">
-
-        <h2>Jaunākās grāmatas</h2>
-
-        <div class="ad-buttons">
-            <button class="buy">Pirkt</button>
-            <button class="try">Izmēģināt</button>
-        </div>
-
-    </section>
-
-    <!-- SLAIDERIS -->
-    <section class="slider">
-
-        <div class="arrow left">&#8592;</div>
- <img src=" https://es-static.z-dn.net/files/ddf/a83d0ee48aa09f0ceeebed6bdb8c1052.jpg">
-           
-       
-
-        <div class="arrow right">&#8594;</div>
-
-    </section>
-
-    <!-- INFORMĀCIJA -->
-    <section class="info">
-
-        <h2>Kāpēc lasīt grāmatas?</h2>
-
-        <p>
-            Grāmatas palīdz uzlabot valodu, trenē atmiņu
-            un attīsta domāšanu. Lasīšana ir lielisks veids,
-            kā pavadīt brīvo laiku lietderīgi.
-        </p>
-
-        <ul>
-            <li>Uzlabo iztēli un radošumu</li>
-            <li>Paplašina zināšanas</li>
-            <li>Palīdz atpūsties un koncentrēties</li>
-        </ul>
-
-        <table>
-            <tr>
-                <td>Romāni</td>
-                <td>Detektīvi</td>
-                <td>Fantāzija</td>
-            </tr>
-
-            <tr>
-                <td>Klasika</td>
-                <td>Biogrāfijas</td>
-                <td>Piedzīvojumi</td>
-            </tr>
-            <tr>
-                <td>Psiholoģija</td>
-                <td>Vēsture</td>
-                <td>Zinātne</td>
-            </tr>
-        </table>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-content">
-
-            <div class="logo">
-                Grāmatu Pasaule
-            </div>
-
-            <div>
-                <strong>Kontakti:</strong><br>
-                E-pasts: gramatas@gmail.com<br>
-                Tel: +371 12345678
-            </div>
-
-            <div class="footer-links">
-                <a href="#">Sākums</a>
-                <a href="#">Grāmatas</a>
-                <a href="#">Par mums</a>
-                <a href="#">Kontakti</a>
-            </div>
-
-        </div>
-
-        <div class="author">
-            Autors: Aleksandra Zavoloka
-        </div>
-
-    </footer>
+<a href="#">Lasīt vairāk</a>
 
 </div>
+
+<div class="card">
+
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<h3>Detektīvu kolekcija</h3>
+
+<p>
+Aizraujoši stāsti un negaidīti sižeta pavērsieni.
+</p>
+
+<br>
+
+<a href="#">Lasīt vairāk</a>
+
+</div>
+
+<div class="card">
+
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<h3>Klasiskā literatūra</h3>
+
+<p>
+Iepazīsties ar pasaules literatūras klasiku.
+</p>
+
+<br>
+
+<a href="#">Lasīt vairāk</a>
+
+</div>
+
+</section>
+
+<!-- AD -->
+
+<section class="ad">
+
+<h2>Jaunākās grāmatas</h2>
+
+<div class="ad-buttons">
+
+<button class="buy">
+Pirkt
+</button>
+
+<button class="try">
+Izmēģināt
+</button>
+
+</div>
+
+</section>
+
+<!-- SLIDER -->
+
+<section class="slider">
+
+<span class="arrow left" onclick="iepriekseja()">
+&#8592;
+</span>
+
+<img id="slideImage"
+src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
+
+<span class="arrow right" onclick="nakosa()">
+&#8594;
+</span>
+
+</section>
+
+<!-- INFO -->
+
+<section class="info">
+
+<h2>Kāpēc lasīt grāmatas?</h2>
+
+<p>
+Grāmatas palīdz uzlabot valodu, trenē atmiņu
+un attīsta domāšanu. Lasīšana ir lielisks veids,
+kā pavadīt brīvo laiku lietderīgi.
+</p>
+
+<ul>
+<li>Uzlabo iztēli un radošumu</li>
+<li>Paplašina zināšanas</li>
+<li>Palīdz atpūsties un koncentrēties</li>
+</ul>
+
+<table>
+
+<tr>
+<td>Romāni</td>
+<td>Detektīvi</td>
+<td>Fantāzija</td>
+</tr>
+
+<tr>
+<td>Klasika</td>
+<td>Biogrāfijas</td>
+<td>Piedzīvojumi</td>
+</tr>
+
+<tr>
+<td>Psiholoģija</td>
+<td>Vēsture</td>
+<td>Zinātne</td>
+</tr>
+
+</table>
+
+<p id="datums"></p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<div class="logo">
+Grāmatu Pasaule
+</div>
+
+<div>
+<strong>Kontakti:</strong><br>
+E-pasts: gramatas@gmail.com<br>
+Tel: +371 12345678
+</div>
+
+<div class="footer-links">
+<a href="#">Sākums</a>
+<a href="#">Grāmatas</a>
+<a href="#">Par mums</a>
+<a href="#">Kontakti</a>
+</div>
+
+</div>
+
+<div class="author">
+Autors: Aleksandra Zavoloka
+</div>
+
+</footer>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function sveiciens(){
+    alert("Laipni lūdzam Grāmatu Pasaulē!");
+}
+
+function mainitFondu(){
+
+    if(document.body.style.background == "rgb(223, 230, 233)"){
+        document.body.style.background = "#f2f2f2";
+    }
+
+    else{
+        document.body.style.background = "#dfe6e9";
+    }
+}
+
+/* SLIDER */
+
+let bildes = [
+
+"https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop",
+
+"https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop",
+
+"https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop"
+
+];
+
+let indekss = 0;
+
+function nakosa(){
+
+    indekss++;
+
+    if(indekss >= bildes.length){
+        indekss = 0;
+    }
+
+    document.getElementById("slideImage").src = bildes[indekss];
+}
+
+function iepriekseja(){
+
+    indekss--;
+
+    if(indekss < 0){
+        indekss = bildes.length - 1;
+    }
+
+    document.getElementById("slideImage").src = bildes[indekss];
+}
+
+/* DATUMS */
+
+let sodiena = new Date();
+
+document.getElementById("datums").innerHTML =
+"Šodienas datums: " + sodiena.toLocaleDateString();
+
+/* AUTOMĀTISKS SLAIDERIS */
+
+setInterval(nakosa, 4000);
+
+</script>
 
 </body>
 </html>
